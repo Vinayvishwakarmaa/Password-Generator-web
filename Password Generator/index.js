@@ -57,9 +57,11 @@ genBtnEl.addEventListener("click", () => {
 });
 
 passwordEl.addEventListener("click", (e) => {
-      navigator.clipboard.writeText(passwordEl.innerText).then(() => {
-            alert("Copied to clipboard");
-      }).catch((err) => {
-            alert("could not copy");
-      })  
+      if (e.target.innerText.length > 0) {
+            navigator.clipboard.writeText(passwordEl.innerText).then(() => {
+                  alert("Copied to clipboard");
+            }).catch((err) => {
+                  alert("could not copy");
+            })  
+     }
 });
